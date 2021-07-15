@@ -8,7 +8,7 @@ import { RestaurantInfoCard } from '../components/restaurant-info-card.component
 
 const ScreenContainer = styled.SafeAreaView`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight}px;
+  margin-top: ${StatusBar.currentHeight || 0}px;
 `;
 
 const SearchbarContainer = styled.View`

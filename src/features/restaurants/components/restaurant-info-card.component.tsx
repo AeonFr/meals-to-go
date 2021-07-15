@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
+
 import { Card } from 'react-native-paper';
 import { Restaurant } from '../types/restaurant';
 
@@ -9,7 +10,7 @@ interface Props {
 
 const Title = styled.Text`
   padding: 16px;
-  color: #333;
+  color: ${(props) => props.theme.colors.brand.primary};
   font-size: 22px;
   font-weight: bold;
 `;
@@ -28,7 +29,7 @@ export const RestaurantInfoCard: React.FC<Props> = ({ restaurant = {} }) => {
   } = restaurant;
 
   return (
-    <Card>
+    <Card elevation={5}>
       <Card.Cover source={{ uri: photos[0] }} />
       <Title>{name}</Title>
     </Card>
