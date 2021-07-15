@@ -1,32 +1,42 @@
 import React from 'react';
+import styled from 'styled-components/native';
 import { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
+import { StatusBar } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component';
+
+const ScreenContainer = styled.SafeAreaView`
+  flex: 1;
+  margin-top: ${StatusBar.currentHeight}px;
+`;
+
+const SearchbarContainer = styled.View`
+  padding: 16px;
+`;
+
+const ListContainer = styled.View`
+  flex: 1;
+  background-color: teal;
+  padding: 16px;
+`;
 
 export const RestaurantScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const onChangeSearch = (query: string) => setSearchQuery(query);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.searchContainer}>
+    <ScreenContainer>
+      <SearchbarContainer>
         <Searchbar
           placeholder="Search"
           onChangeText={onChangeSearch}
           value={searchQuery}
         />
-      </View>
-      <View style={styles.list}>
+      </SearchbarContainer>
+      <ListContainer>
         <RestaurantInfoCard />
-      </View>
-    </SafeAreaView>
+      </ListContainer>
+    </ScreenContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { flex: 1, marginTop: StatusBar.currentHeight },
-  searchContainer: { padding: 16 },
-  list: { flex: 1, backgroundColor: 'teal', padding: 16 },
-});
