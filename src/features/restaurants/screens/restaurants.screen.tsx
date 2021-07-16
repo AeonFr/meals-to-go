@@ -12,13 +12,13 @@ const ScreenContainer = styled.SafeAreaView`
 `;
 
 const SearchbarContainer = styled.View`
-  padding: 16px;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const ListContainer = styled.View`
   flex: 1;
-  background-color: teal;
-  padding: 16px;
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantScreen = () => {

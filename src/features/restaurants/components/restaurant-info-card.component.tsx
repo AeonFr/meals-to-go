@@ -9,10 +9,10 @@ interface Props {
 }
 
 const Title = styled.Text`
-  padding: 16px;
-  color: ${(props) => props.theme.colors.brand.primary};
-  font-size: 22px;
-  font-weight: bold;
+  padding: ${(props) => props.theme.space[3]};
+  color: ${(props) => props.theme.colors.ui.primary};
+  font-size: ${(props) => props.theme.fontSizes[4]};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
 `;
 
 export const RestaurantInfoCard: React.FC<Props> = ({ restaurant = {} }) => {
