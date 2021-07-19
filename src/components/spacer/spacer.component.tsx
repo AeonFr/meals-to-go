@@ -1,4 +1,5 @@
-import styled from 'styled-components/native';
+import * as React from 'react';
+import styled, { useTheme } from 'styled-components/native';
 
 const sizeVariants = {
   small: 1,
@@ -22,7 +23,19 @@ interface Props {
   size: SizeKey;
 }
 
-export const Spacer = styled.View<Props>`
-  ${({ position, size, theme }) =>
-    `${positionVariants[position]}: ${theme.space[sizeVariants[size]]}`};
+// const StyledSpacer = styled.View<Props>`
+//   ${({ position, size, theme }) =>
+//     `${positionVariants[position]}: ${theme.space[sizeVariants[size]]}`};
+// `;
+
+const StyledSpacer = styled.View<{ variant: string }>`
+  ${(props) => props.variant}
 `;
+
+export const Spacer: React.FC<Props> = ({ position, size, children }) => {
+  const theme = useTheme();
+  const variant = `${positionVariants[position]}: ${
+    theme.space[sizeVariants[size]]
+  }`;
+  return <StyledSpacer variant={variant} children={children} />;
+};

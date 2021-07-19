@@ -41,6 +41,7 @@ const ClosedLabel = styled.Text`
   color: ${(props) => props.theme.colors.text.error};
   text-transform: uppercase;
   font-weight: ${(props) => props.theme.fontWeights.bold};
+  font-size: ${(props) => props.theme.fontSizes[0]};
 `;
 
 const Icon = styled.Image`
@@ -81,8 +82,8 @@ export const RestaurantInfoCard: React.FC<Props> = ({ restaurant = {} }) => {
         <Title>{name}</Title>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
+            {ratingArray.map((_, key) => (
+              <SvgXml xml={star} key={key} width={20} height={20} />
             ))}
           </Rating>
 
