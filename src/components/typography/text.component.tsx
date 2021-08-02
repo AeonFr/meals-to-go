@@ -11,11 +11,11 @@ const defaultTextStyles = (theme: Theme) => `
 `;
 
 const body = (theme: Theme) => `
-  font-size: ${theme.fontSizes[1]};
+  font-size: ${theme.fontSizes[2]};
 `;
 
 const hint = (theme: Theme) => `
-  font-size: ${theme.fontSizes[1]};
+  font-size: ${theme.fontSizes[2]};
 `;
 
 const error = (theme: Theme) => `
@@ -23,14 +23,14 @@ const error = (theme: Theme) => `
 `;
 
 const caption = (theme: Theme) => `
-  font-size: ${theme.fontSizes[0]};
+  font-size: ${theme.fontSizes[2]};
   font-weight: ${theme.fontWeights.bold};
 `;
 
 const label = (theme: Theme) => `
-  font-family: ${theme.fonts.heading_regular};
-  font-size: ${theme.fontSizes[1]};
-  font-weight: ${theme.fontWeights.medium};
+  font-family: ${theme.fonts.heading_bold};
+  font-size: ${theme.fontSizes[3]};
+  font-weight: ${theme.fontWeights.bold};
 `;
 
 const variants = {
